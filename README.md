@@ -4,7 +4,7 @@ The Claude Code skills I use. Three groups:
 
 - **My own skills**: how I write measured books and run agents and long jobs. They are written for
   my machine, so they name paths such as `~/claude/ml-book` as reference implementations. Read a
-  skill before you install it, and change the paths.
+  skill before you install it, and change the paths. MIT, see [LICENSE](LICENSE).
 - **Simplified Technical English**: the skill from
   [0xpili/simplified-technical-english](https://github.com/0xpili/simplified-technical-english)
   (MIT, see its [LICENSE](simplified-technical-english/LICENSE) and [NOTICE](simplified-technical-english/NOTICE.md)),
