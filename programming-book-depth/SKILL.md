@@ -1,6 +1,6 @@
 ---
 name: programming-book-depth
-description: Two things every chapter of a programming book, library tutorial or API guide must carry — a "How it works" section that explains the mechanism under the API in more depth than the usage, and a "Reference" section that prints the exact function signatures from the installed library and explains every parameter. Use whenever Johan asks for a book, chapter, tutorial or guide about a library, framework, language feature or API, together with measured-writing.
+description: Every chapter of a programming book carries a "How it works" section and a "Reference" section with printed signatures and a row per parameter. Use with measured-writing for a book, chapter, tutorial or guide about a library, framework or API.
 ---
 
 # Programming books: depth and signatures

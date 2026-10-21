@@ -11,7 +11,8 @@ cannot tell whether work is advancing, stuck, or finished.
 
 Two things are forbidden and this skill replaces both:
 
-- **Blocking.** Never sit in a foreground wait. Launch detached, then keep working.
+- **Blocking.** Never sit in a foreground wait, and never end the turn only to wait for a
+  notification. Launch detached, then keep working.
 - **Silence.** Never let a long job run without reporting. "I'll check when it's done" leaves him
   with no information for however long the job takes.
 

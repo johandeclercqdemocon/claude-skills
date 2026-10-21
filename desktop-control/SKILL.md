@@ -1,6 +1,6 @@
 ---
 name: desktop-control
-description: Find and press buttons, read labels and fill fields in DESKTOP applications on this machine, by control name rather than screen coordinates. Use when Johan asks to click something in an app, drive a GUI, check that a desktop program works, or automate a window. Not for web pages — use the selenium skill for those.
+description: Press buttons, read labels and fill fields in DESKTOP applications on this machine, by control name (AT-SPI) rather than screen coordinates. Use to click something in an app, drive a GUI, or check that a desktop program works. For web pages, use the built-in browser.
 ---
 
 # Desktop control
@@ -60,7 +60,8 @@ Electron apps that have not enabled it. If `apps` does not list it, nothing here
 gsettings set org.gnome.desktop.interface toolkit-accessibility true
 ```
 
-That setting is currently **false** on this machine. Changing it is a user-level setting needing no
+Check its current value first:
+`gsettings get org.gnome.desktop.interface toolkit-accessibility`. Changing it is a user-level setting needing no
 sudo, but it is Johan's desktop — say what you are changing and why before changing it.
 
 **Raw pointer and keyboard injection.** There is none here. `ydotool` would provide it on Wayland

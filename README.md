@@ -1,10 +1,14 @@
 # claude-skills
 
-The Claude Code skills I use. Two groups:
+The Claude Code skills I use. Three groups:
 
 - **My own skills**: how I write measured books and run agents and long jobs. They are written for
   my machine, so they name paths such as `~/claude/ml-book` as reference implementations. Read a
   skill before you install it, and change the paths.
+- **Simplified Technical English**: the skill from
+  [0xpili/simplified-technical-english](https://github.com/0xpili/simplified-technical-english)
+  (MIT, see its [LICENSE](simplified-technical-english/LICENSE) and [NOTICE](simplified-technical-english/NOTICE.md)),
+  copied unchanged. My `measured-writing` skill uses it for every new book.
 - **Skills from Matt Pocock**: picked from [mattpocock/skills](https://github.com/mattpocock/skills)
   (MIT, see [LICENSE-mattpocock](LICENSE-mattpocock)), copied unchanged from upstream commit `5beb35b`
   (2026-10-21). I removed only the `agents/openai.yaml` files, because they are for Codex.
@@ -20,14 +24,19 @@ they cost no context, and only you can start them.
 | [measured-writing](measured-writing/SKILL.md) | by itself, for a book, guide or README | The pattern for a book: every claim is measured by code that ships with the text, every chapter is named after a thing the reader builds, and a checker fails the build when prose and code disagree. |
 | [check-what-you-write](check-what-you-write/SKILL.md) | by itself, when text states a number, name or command | The audit before a chapter is done: numbers, identifiers, claims and assumptions, each checked against what the machine printed. |
 | [programming-book-depth](programming-book-depth/SKILL.md) | by itself, for a book about a library or API | Every chapter gets a "How it works" section and a "Reference" section with signatures printed by `inspect` and a row for every parameter. |
-| [simplified-technical-english](simplified-technical-english/SKILL.md) | by itself, for technical documentation or "STE" | Writes in ASD-STE100 Simplified Technical English, with a checker script. MIT for the skill text; the word list is from the ASD dictionary, see its [NOTICE](simplified-technical-english/NOTICE.md). |
 | [freeze-during-sweep](freeze-during-sweep/SKILL.md) | by itself, while a checker or test run is busy | Edit nothing that a running verification reads, and discard the run if you did. |
 | [long-run-heartbeat](long-run-heartbeat/SKILL.md) | by itself, for a job of more than a few minutes | Report a rate every 7 minutes, never block and never go silent. |
 | [work-the-queue](work-the-queue/SKILL.md) | by itself, on "do all of X" or "continue" | Work an agreed list to the end without asking between items, and report once. |
 | [validate-before-paid-calls](validate-before-paid-calls/SKILL.md) | by itself, before a run that bills model inference | Prove the judge, the plumbing and the runner for free before the first paid call. |
 | [agent-harness](agent-harness/SKILL.md) | by itself, for a tool-calling agent or its evaluation | How to build and measure an agent loop: validated tools, failures as observations, a cached client, a trace per run, tasks that code can grade. Includes the failures measured on small local Ollama models. |
 | [desktop-control](desktop-control/SKILL.md) | by itself, to click or read a desktop app | Drives desktop applications by control name through AT-SPI, which works under Wayland. Includes [desktop.py](desktop-control/scripts/desktop.py). |
-| [app-walkthrough](app-walkthrough/SKILL.md) | by itself, to demo an app or prove a procedure | A numbered screenshot walkthrough that proves a claim, with the failures included. Uses `desktop-control`. |
+| [app-walkthrough](app-walkthrough/SKILL.md) | only `/app-walkthrough` | A numbered screenshot walkthrough that proves a claim, with the failures included. Uses `desktop-control`. |
+
+## Simplified Technical English
+
+| Skill | Starts | What it does |
+|---|---|---|
+| [simplified-technical-english](simplified-technical-english/SKILL.md) | by itself, for technical documentation or "STE" | Writes in ASD-STE100 Simplified Technical English, with a checker script. The word list is from the ASD dictionary: see the [NOTICE](simplified-technical-english/NOTICE.md). |
 
 ## Skills from Matt Pocock
 
@@ -61,7 +70,8 @@ only the ones you use.
 
 ## Where the source is
 
-My own skills are maintained in my private environment repo, and this repo holds a published copy.
+My own skills and the STE skill are maintained in my private environment repo, and this repo holds a
+published copy.
 The Pocock skills are updated from upstream:
 
 ```bash

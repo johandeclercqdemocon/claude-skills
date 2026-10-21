@@ -1,13 +1,13 @@
 ---
 name: measured-writing
-description: The pattern Johan wants for any book, course, guide, tutorial, manual, README or set of instructions — every claim measured by code that ships with the text, every chapter named after a thing the reader builds, every number reproducible, and a mechanical checker that fails the build when the prose and the code disagree. Every NEW book is written in Simplified Technical English. Use whenever he asks for a book, a chapter, documentation, a how-to, a training track, or instructions somebody else will follow.
+description: "The pattern for books, guides, tutorials, READMEs and instructions: every claim measured by code that ships with the text, and a checker that fails the build when prose and code disagree. Use when asked for a book, chapter, documentation or how-to."
 ---
 
 # Measured writing
 
 **Standing instruction from Johan: use this pattern for any book or instructions, without being
-asked.** Reference implementation: `~/claude/ml-book` — 33 chapters, 168 exercises, a checker, and
-a PDF. Its `STYLE.md` is the long form of §Prose below; read it before writing a chapter there.
+asked.** Reference implementation: `~/claude/ml-book` — chapters, exercises, a checker and a PDF
+(`ls ~/claude/ml-book/chapters | wc -l` for its current size). Its `STYLE.md` is the long form of §Prose below; read it before writing a chapter there.
 
 The one idea: **nothing is asserted that was not run.** Everything else follows from that.
 
@@ -56,19 +56,13 @@ programs get a different fence (`text`, `bash`, `json`) and are skipped. Never w
 to accommodate a snippet — rewrite the snippet. Run it on an idle machine: a timeout under load is
 not a failure, and reporting one as a failure is its own kind of wrong.
 
-**And do not edit anything the checker is reading while it runs.** Its read set is wider than it
-looks — `README.md`, every chapter, appendix, exercise and solution, plus every module their blocks
-import — and for a book whose examples retrieve over its own text, every measurement module reads
-`chapters/` too. The `freeze-during-sweep` skill has the exact read sets, what stays safe during a
-run, and what to do once the freeze is broken: discard the run rather than report it.
+**While the checker runs, freeze what it reads.** The `freeze-during-sweep` skill has the read sets
+and what to do when the freeze breaks.
 
 ## Programming books: depth and signatures, in every chapter
 
-**Standing instruction from Johan (2026-10-13).** Every chapter of a book about a library, framework or
-language carries a `## How it works` section (the mechanism under the API, with one executed block) and a
-`## Reference` section (real signatures printed by a tool and compared by the checker, then a table of the
-parameters that matter, each with its default and a measured consequence). Invoke the
-`programming-book-depth` skill before drafting.
+A book about a library, framework or language also follows the `programming-book-depth` skill
+(Johan, 2026-10-13). Invoke it before drafting.
 
 ## Exercises, in three kinds
 
@@ -98,7 +92,8 @@ and say where it appears in the contents.
 ## Prose in Simplified Technical English — every NEW book
 
 **Standing instruction from Johan (2026-10-08): write every new book in Simplified Technical
-English.** Invoke the `simplified-technical-english` skill before drafting a chapter and run its
+English.** Invoke the `simplified-technical-english` skill (installed 2026-10-08 from
+https://github.com/0xpili/simplified-technical-english, MIT) before drafting a chapter and run its
 checker over the result:
 
 ```bash

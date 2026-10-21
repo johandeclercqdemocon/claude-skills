@@ -1,6 +1,7 @@
 ---
 name: app-walkthrough
-description: Produce a narrated screenshot walkthrough that proves a desktop application does what some documentation claims — open it, drive it by control name, capture each step, and write it up with the failures included. Use when Johan asks to demo an app, show that setup instructions work, document a GUI procedure, or make a "making-of" for one. Pairs with desktop-control, which does the actual driving.
+description: Narrated screenshot walkthrough that proves a desktop app does what its documentation claims, failures included.
+disable-model-invocation: true
 ---
 
 # App walkthrough

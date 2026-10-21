@@ -1,6 +1,6 @@
 ---
 name: validate-before-paid-calls
-description: Before any work that bills model inference (OpenRouter, an API key, a benchmark round, an agent run, a ladder), prove for free that the work is ready and that its checks are right. The judge (hidden tests, acceptance tests, examples in a task text), the plumbing (keys in every process, paths, folders, task files) and the runner must each be tested before the first paid call, because a wrong judge bills twice. Use whenever you are about to start a paid run, a benchmark round, scripts/ladder.py, or any loop of model calls; also when you write the tests or task texts that a paid run will use.
+description: "Prove for free that a paid run is ready, before the first billed call: test the judge, the plumbing and the runner. Use before any run that bills inference (OpenRouter, an API key, a benchmark round, a ladder), and when writing the tests or task texts it will use."
 ---
 
 # Validate before paid calls
@@ -60,4 +60,4 @@ below comes from a mistake that cost money or time in `~/claude/multi-model-setu
 Before: what will bill, the estimate, the cap, and which free checks passed (with counts). After:
 the measured cost, what was wasted and why, and which check now prevents it.
 
-Related: `check-what-you-write`, `freeze-during-sweep`, memory `announce-anthropic-api-calls`.
+Related: `check-what-you-write`, `freeze-during-sweep`, the CLAUDE.md rule "Announce inference spend".

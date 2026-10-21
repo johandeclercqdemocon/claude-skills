@@ -1,6 +1,6 @@
 ---
 name: agent-harness
-description: How Johan wants an LLM agent (a model in a tool-calling loop) built and measured — tools as schema plus function behind a validator, failures returned as observations, a disk-cached chat client, a trace per run, tasks whose answers code can compute so no judge is needed, and the specific failures that small local models hit. Use whenever building, testing or writing about an agent, a tool-calling loop, tool definitions, or an agent evaluation, especially against local Ollama models.
+description: "Build and measure an LLM agent (a model in a tool-calling loop): validated tools, failures as observations, a cached client, a trace per run, code-graded tasks, and the measured failures of small local models. Use when building, testing or writing about an agent or tool definitions."
 ---
 
 # Agent harness
@@ -10,8 +10,10 @@ Read `client.py`, `tools.py`, `loop.py`, `tasks.py` before writing a new one; co
 This skill is the *design*; the ml-book chapters hold the measurements behind each rule.
 
 **Cost note (CLAUDE.md rule).** Everything here runs on local Ollama models: it costs wall-clock,
-not money, and bills no API. Say so before starting a sweep. A tool-calling turn on this machine
-(22 cores, no GPU) is 15-60 s; plan sweeps in the background and keep working.
+not money, and bills no API. Say so before starting a sweep. A tool-calling turn on this laptop
+(22 cores, no GPU) is 15-60 s; plan sweeps in the background and keep working. The ml-book's
+model server is now the GPU box (memory `gpu-box-mymodelandca`); quote a timing only with the
+machine it ran on.
 
 ## The five pieces
 

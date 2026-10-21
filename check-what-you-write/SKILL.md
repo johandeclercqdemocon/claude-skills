@@ -1,6 +1,6 @@
 ---
 name: check-what-you-write
-description: Johan hates errors in books and wants no wrong assumptions. Before any chapter, exercise, solution or README is called finished, every claim in the prose must be checked against what the machine printed, every identifier against the code, every link against the file, every assumption tested or labelled, and the failures must be listed honestly. Use whenever you write or change text that states a number, a name, a behavior or a command, in a book, a guide, a README or a report. It applies on top of measured-writing and programming-book-depth.
+description: "Audit text before it counts as finished: every number, identifier, link and assumption checked against what the machine printed, failures listed. Use when writing or changing a chapter, exercise, README or report that states a number, name, behavior or command."
 ---
 
 # Check what you write

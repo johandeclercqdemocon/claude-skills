@@ -1,6 +1,6 @@
 ---
 name: freeze-during-sweep
-description: Never edit the files a verification run is reading. Use whenever a checker, test suite, measurement module or book build is running — check_snippets.py, pytest, examples.rag.*, build_pdf.py — and before touching any file while one is in flight. Defines exactly what counts as a sweep, what each kind reads, and what to do when the freeze has already been broken.
+description: Freeze every file a running verification reads (checker, test suite, measurement, book build) until it ends, and discard the run if the freeze broke. Use while check_snippets.py, pytest, examples.rag.* or build_pdf.py runs, and before touching a file during one.
 ---
 
 # Freeze the inputs while a sweep runs
@@ -74,7 +74,7 @@ echo "SWEEP CLEAR"
 ```
 
 Run that with `run_in_background: true`, and pair it with a 7-minute heartbeat
-([[long-run-heartbeat-7-min]]) so the wait is visible. Verify an armed guard is actually alive
+(the `long-run-heartbeat` skill) so the wait is visible. Verify an armed guard is actually alive
 rather than assuming; a bare `grep -c` can match its own command line.
 
 ## When the freeze has already been broken
